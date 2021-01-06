@@ -22,8 +22,7 @@ export class JokesService {
 
   // Get Categories
   getCategories() {
-    var a =this.http.get<string[]>(this.apiUrl +  'categories');
-    return a;
+    return this.http.get<string[]>(this.apiUrl +  'categories');
   }
 
   // Get joke by Category
@@ -33,6 +32,6 @@ export class JokesService {
 
   // Get Search Jokes
   getSearchJokes(searchTerm : string) {
-    return  this.http.get<{result: Joke[], amount:  number}>(this.apiUrl + `/search?query=${searchTerm}`);
+    return  this.http.get<{result: Joke[], amount:  number}>(this.apiUrl + `search?query=${searchTerm}`);
   }
 }
